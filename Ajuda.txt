@@ -1,0 +1,45 @@
+As imagens estão na pasta img 
+
+As cores utilizadas foram:
+Cabeçalho: #34382C
+tela inicial com o buque: #11120E
+restante das telas: #8A996D
+
+fontes utilizadas:
+Cabeçalho: produtos e contato = Libre Baskerville
+          Florentine = Playfair Display
+
+as fontes variam, a playfair é a mais chique está nos titulos e a outra nas informações.Se vc clicar no design do figma na lateral vai aparecer que fonte é
+
+para importar a fonte aconselho ir no google fonte
+
+na parte do Cabeçalho em produtos e contatos precisa ser um menu no html, para quando clicar direcionar para as paginas tipo no trabalho de web.
+Use bastante Display flex  para alinhar, ele facilita na hora de ser responsivo.
+
+importei as fontes dai é só colocar font-family e o nome da fonte em aspas
+
+
+Claro! Abaixo está um mini tutorial que você pode adicionar ao README.md para sua amiga:
+
+
+Como Colaborar
+Para colaborar neste projeto, siga as instruções abaixo:
+
+1. Clonar o Repositório
+Antes de começar a trabalhar no projeto, clone o repositório para o seu computador local usando o seguinte comando:
+git clone https://github.com/RafaelyOz/Florentine
+
+2. Criar uma Nova Branch para o Frontend
+Antes de começar a trabalhar nas alterações do frontend, crie uma nova branch para suas alterações usando o seguinte comando:
+git checkout -b front-end
+
+3. Desenvolver e Atualizar o Frontend
+Faça suas alterações no código-fonte do frontend conforme necessário. Certifique-se de fazer commits regulares para registrar seu progresso:
+git add .
+git commit -m "Descrição concisa das alterações"
+
+4. Enviar Atualizações para a Branch do Frontend
+Após fazer suas alterações e commits, envie suas atualizações para a branch do frontend usando o seguinte comando:
+git push origin front-end
+
+
