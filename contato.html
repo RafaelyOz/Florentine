@@ -3,10 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Página Inicial</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    
+    <!-- Estrutracao do header, onde ele foi separdo em tres divs para que possa ser separados conforme layout -->
+    <header>
+        <div>
+            <a href="#">Contatos</a>
+            <a href="#">Produtos</a>
+        </div>
+        <div>
+            <a href="pginicial.html"><h2>Florentine</h2></a>
+        </div>
+        <div>
+            <img src="img/coracao.png" alt="Notificações">
+            <img src="img/sacola.png" alt="Sacola">
+            <a class="profile-link" href="login.html">
+                <img src="img/pessoa.png" alt="Perfil">
+            </a>
+        </div>
+    </header>
+
+    <!-- Conteudo -->
+    <div class="content-all-contact">
+        <div class="content-contact">
+            <div>
+                <h2>Entre em Contato Conosco</h2>
+            </div>
+            <p>
+                Estamos aqui para ajudar! Se você tiver alguma dúvida, 
+                sugestão ou precisar de um orçamento, não hesite em nos contatar. Você pode nos encontrar pelos seguintes meios:
+            </p>
+        </div>
+
+        <h3>Informações de Contato:</h3>
+        <div class="content-info">
+            <p>Endereço: Rua das Flores, 123, Centro, Cidade XYZ</p>
+            <p>Telefone: (11) 1234-5678</p>
+            <p>E-mail: contato@florantine.com</p>
+        </div>
+    </div>
+
+    <form action="">
+        <h4>Envie uma Mensagem</h4>
+        <div class="field-staff">
+            <div>
+                <label for="">Nome:</label>
+                <input type="text">
+            </div>
+            <div>
+                <label for="">Email:</label>
+                <input type="text">
+            </div>
+        </div>
+        <div class="field-message">
+            <h5>Mensagem:</h5>
+            <textarea placeholder="Escreva aqui sua mensagem" id=""></textarea>
+        </div>
+        <input id="btn-form" type="button" value="Enviar">
+    </form>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <span>.</span>
+            <div>
+                <h2>Florentine</h2>
+            </div>
+        </div>
+        <div class="content-footer">
+            <div>
+                <a href="">Contato</a>
+                <a href="">Localização</a>
+            </div>
+            <div>
+                <h4>Produtos</h4>
+                <a href="">Arranjos florais</a>
+                <a href="">Plantas e suculentas</a>
+                <a href="">Presentes e acessorios</a>
+                <a href="">Decoração para eventos</a>
+            </div>
+            <div id="sociais">
+                <img src="img/telegram_footer.png" alt="Telegram">
+                <img src="img/wpp_footer.png" alt="WhatsApp">
+                <img src="img/instagran_footer.png" alt="Instagram">
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
