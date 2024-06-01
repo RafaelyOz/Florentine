@@ -409,14 +409,117 @@ form h4{
 #btn-form:hover{
     background-color: #717d59;
 }
-#formCliente{
-    display: none;
+
+/* Container do formulário de login */
+.login-container {
+    background-color: #313727; /* Cor de fundo branca */
+    border-radius: 10px; /* Borda arredondada */
+    padding: 20px; /* Espaçamento interno */
+    width: 300px; /* Largura do container */
+    margin: auto; /* Centralizar na tela */
+    margin-top: 50px; /* Espaçamento superior */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
-#formAtendente{
-    display: none;
-}
-#formCadastro{
-    display: none;
+/* Títulos do formulário */
+.login-container h2 {
+    margin-bottom: 20px; /* Espaçamento inferior */
+    color: #fff; /* Cor do texto */
+    text-align: center; /* Centralizar texto */
 }
 
+/* Estilo dos campos de entrada */
+.login-container input[type="text"],
+.login-container input[type="password"],
+.login-container input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+}
+
+
+/* Botão de login */
+.login-container button[type="submit"] {
+    width: 100%; /* Largura total */
+    padding: 10px; /* Espaçamento interno */
+    background-color: #8A996D; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    border: none; /* Sem borda */
+    border-radius: 5px; /* Borda arredondada */
+    cursor: pointer; /* Cursor ao passar por cima */
+    transition: background-color 0.3s; /* Transição suave */
+}
+
+/* Estilizar link para cadastrar-se */
+.login-container a {
+    text-decoration: none; /* Sem sublinhado */
+    color: #fff; /* Cor do texto */
+    margin: 20px auto 0 auto;
+
+}
+
+
+
+.next-button {
+    width: 200px;
+    padding: 10px;
+    background-color: #2c331d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    display: block;
+    margin: 20px auto 0 auto;
+    text-align: center;
+}
+
+/* Checkbox e label */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 10px; /* Espaçamento entre o checkbox e o texto */
+}
+
+.checkbox-container label {
+    color: #fff; /* Cor do texto */
+}
+
+/* Estilos dos botões de login */
+.button-login-container {
+    text-align: center;
+    margin-top: 50px;
+}
+.button-login-container h1{
+    color: #fff;
+}
+
+
+.button-login a {
+    text-decoration: none;
+}
+
+.button-login button {
+    background-color: #6a7552;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button-login button:hover {
+    background-color: #717d59;
+}

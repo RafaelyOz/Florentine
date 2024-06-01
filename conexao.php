@@ -11,6 +11,4 @@ try{
     die("Erro ao se conectar no banco de dados: " . $e->getMessage());
 }
 
-
-
 ?>
