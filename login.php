@@ -12,7 +12,7 @@
     <header>
         <div>
             <a href="contato.html">Contatos</a>
-            <a href="#">Produtos</a>
+            <a href="catalogo.php">Produtos</a>
         </div>
         <div>
             <a href="pginicial.html">
