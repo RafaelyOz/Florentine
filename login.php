@@ -15,7 +15,7 @@
             <a href="catalogo.php">Produtos</a>
         </div>
         <div>
-            <a href="pginicial.html">
+            <a href="index.html">
                 <h2>Florentine</h2>
             </a>
         </div>

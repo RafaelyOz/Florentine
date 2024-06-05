@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Produtos</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./index.css">
 </head>
 
 <body>
@@ -16,7 +16,7 @@
             <a href="#">Produtos</a>
         </div>
         <div>
-            <a href="pginicial.html"><h2>Florentine</h2></a>
+            <a href="index.html"><h2>Florentine</h2></a>
         </div>
         <div>
             <img src="img/coracao.png" alt="Notificações">
@@ -32,7 +32,6 @@
 
         <div class="wellcome-product">
             <img src="img/TelaProd.png" alt="flores">
-        
         </div>
 
         <div class="inicial_content_catalogo">

@@ -1,36 +1,41 @@
 <?php
-session_start();
-require_once 'conexao.php'; // Certifique-se de incluir o arquivo de conexão ao banco de dados
+session_start(); // Inicia a sessão
+require_once 'conexao.php'; // Inclui o arquivo de conexão ao banco de dados
 
+// Verifica se o formulário foi enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = $_POST['username']; // Obtém o nome de usuário do formulário
+    $password = $_POST['password']; // Obtém a senha do formulário
 
+    // Verifica se os campos de usuário e senha estão preenchidos
     if (empty($username) || empty($password)) {
         $error = "Todos os campos são obrigatórios.";
-    }else{
-    try {
-        $stmt = $pdo->prepare("SELECT * FROM atendentes WHERE username = :username AND password = :password");
-        $stmt->bindParam(':username', $username);
-        $stmt->bindParam(':password', $password);
-        $stmt->execute();
-        $atendente = $stmt->fetch(PDO::FETCH_ASSOC);
+    } else {
+        try {
+            // Prepara a consulta SQL para buscar o atendente no banco de dados
+            $stmt = $pdo->prepare("SELECT * FROM atendentes WHERE username = :username AND password = :password");
+            $stmt->bindParam(':username', $username); // Vincula o parâmetro :username à variável $username
+            $stmt->bindParam(':password', $password); // Vincula o parâmetro :password à variável $password
+            $stmt->execute(); // Executa a consulta
+            $atendente = $stmt->fetch(PDO::FETCH_ASSOC); // Busca o atendente
 
-        if ($atendente) {
-            $_SESSION['username'] = $username;
+            // Verifica se o atendente existe e se as credenciais estão corretas
+            if ($atendente) {
+                $_SESSION['username'] = $username; // Armazena o nome de usuário na sessão
 
-            // Redireciona após o login para a tela de administração
-            header("Location: admin.php");
-            exit;
-        } else {
-            $error = "Usuário ou senha incorretos.";
+                // Redireciona após o login para a tela de administração
+                header("Location: admin.php");
+                exit;
+            } else {
+                $error = "Usuário ou senha incorretos."; // Mensagem de erro para usuário ou senha incorretos
+            }
+        } catch (PDOException $e) {
+            echo 'Erro ao realizar login: ' . $e->getMessage(); // Mensagem de erro em caso de exceção
         }
-    } catch (PDOException $e) {
-        echo 'Erro ao realizar login: ' . $e->getMessage();
     }
 }
-}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -39,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Inicial</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./index.css">
 </head>
 
 <body>
@@ -49,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <a href="#">Produtos</a>
         </div>
         <div>
-            <a href="pginicial.html">
+            <a href="index.html">
                 <h2>Florentine</h2>
             </a>
         </div>
@@ -75,9 +80,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
     <div><a class="next-button" href="login.php"> página login</a>
-    <a href="pginicial.html" class="next-button"> página inicial</a>
-</div>
-   
+        <a href="pginicial.html" class="next-button"> página inicial</a>
+    </div>
+
 </body>
 
 </html>

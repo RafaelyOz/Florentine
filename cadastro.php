@@ -1,47 +1,55 @@
 <?php
+session_start();
 require_once 'conexao.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Verifica se todos os campos estão preenchidos
-    if (empty($_POST['nome']) || empty($_POST['email']) || empty($_POST['username']) || empty($_POST['password'])) {
+
+    if (empty($_POST['nome']) || empty($_POST['email']) || empty($_POST['username']) 
+    || empty($_POST['password'])) {
+
         $error = "Por favor, preencha todos os campos.";
     } else {
-        // Se todos os campos estiverem preenchidos, prossegue com o cadastro
+
         $nome = $_POST['nome'];
         $email = $_POST['email'];
         $username = $_POST['username'];
         $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $remember = isset($_POST['remember']) ? $_POST['remember'] : false;
-
         try {
-            $stmt = $pdo->prepare("INSERT INTO clientes (nome, email, username, password) VALUES (:nome, :email, :username, :password)");
+
+            $stmt = $pdo->prepare("INSERT INTO clientes (nome, email, username, password) 
+            VALUES (:nome, :email, :username, :password)");
+
             $stmt->bindParam(':nome', $nome);
             $stmt->bindParam(':email', $email);
             $stmt->bindParam(':username', $username);
             $stmt->bindParam(':password', $password);
+
             $stmt->execute();
-            
-            // Se a opção de lembrar senha estiver marcada, define um cookie
+
             if ($remember) {
                 $token = uniqid();
                 setcookie('remember_token', $token, time() + (30 * 24 * 60 * 60), '/');
-                // Salva o token no banco de dados para futura verificação, se necessário
-                // Lembre-se de criar uma coluna na tabela clientes para armazenar o token
-                $stmt = $pdo->prepare("UPDATE clientes SET remember_token = :token WHERE username = :username");
+
+                $stmt = $pdo->prepare("UPDATE clientes SET remember_token = :token 
+                WHERE username = :username");
+
                 $stmt->bindParam(':token', $token);
                 $stmt->bindParam(':username', $username);
+
                 $stmt->execute();
             }
-            
-            // Redireciona após o cadastro
+
             header("Location: login_cliente.php");
             exit;
         } catch (PDOException $e) {
+
             echo 'Erro ao cadastrar: ' . $e->getMessage();
         }
     }
 }
 ?>
+
 
 
 <!DOCTYPE html>
@@ -51,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Inicial</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./index.css">
 </head>
 
 <body>
@@ -61,12 +69,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <a href="#">Produtos</a>
         </div>
         <div>
-            <a href="pginicial.html">
+            <a href="index.html">
                 <h2>Florentine</h2>
             </a>
         </div>
         <div>
-            <img src="img/coracao.png" alt="Notificações">
+            <img src="/img/coracao.png" alt="Notificações">
             <img src="img/sacola.png" alt="Sacola">
             <a class="profile-link" href="login.php">
                 <img src="img/pessoa.png" alt="Perfil">
@@ -89,8 +97,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
     <div><a class="next-button" href="login.php">página login</a>
-    <a href="pginicial.html" class="next-button"> página inicial</a>
-</div>
+        <a href="pginicial.html" class="next-button"> página inicial</a>
+    </div>
     <footer>
         <div>
             <span>.</span>
